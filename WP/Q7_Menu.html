@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        li {
+            padding: 10px;
+        }
+
+        a:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<script>
+    let list_Item_1 = document.getElementById("iips");
+    let list_Item_2 = document.getElementById("ims");
+    let list_Item_3 = document.getElementById("iet");
+    function name() {
+        alert("You clicked on a link!");
+    }
+
+</script>
+<body>
+    <ol>
+        <li><a id="iips" onclick="name()">IIPS</a></li>
+        <li><a id="ims" onclick="name()">IMS</a></li>
+        <li><a id="iet" onclick="name()">IET</a></li>
+    </ol>
+    <div id="content">
+
+    </div>
+</body>
+
+</html>

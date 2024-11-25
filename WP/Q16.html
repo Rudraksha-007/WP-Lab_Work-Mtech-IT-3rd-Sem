@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #box {
+            border: 1px solid black;
+            padding: 10px;
+            background-color: bisque;
+            color: black;
+            width:max-content;
+            box-shadow:1px 1px 4px black;
+        }
+    </style>
+</head>
+<script>
+    function update() {
+        let text = document.getElementById("text");
+        let time = new Date();
+        let h = time.getHours(), m = time.getMinutes(), s = time.getSeconds();
+        let mer =( h>=12?"PM":"AM");
+        h%=12;if(h==0){h=12;}
+        text.innerText = `${h}:${m}:${s} ${mer}`;
+    }
+    setInterval(update,1000);
+    update();
+</script>
+
+<body>
+    <div id="box">
+        <h1>
+            Current Time is :
+        </h1>
+        <h2 id="text"></h2>
+    </div>
+</body>
+
+</html>

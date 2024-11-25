@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        .box {
+            width: min-content;
+            border-radius: 10px;
+            padding: 50px;
+            margin: auto;
+            border: 1px solid black;
+        }
+
+        input {
+            margin-bottom: 10%;
+            border: 0px;
+            border-radius: 5px;
+            background-color: aliceblue;
+            border-bottom: 3px solid red;
+        }
+
+        #show {
+            display: none;
+            border-radius: 10px;
+        }
+        button{
+            border-radius: 5px;
+            border:0px;
+            padding :5px;
+        }
+    </style>
+</head>
+<script>
+    $(document).ready(() => {
+        $("#calculate").click(() => {
+            let p = $("#pamt").val(), r = $("#int").val(), t = $("#t").val();
+            let result = (p * t * r)/100;
+            $("#show").text(`The Interest calculated is : ${result}`).show();
+        });
+        $("#clean").click(()=>{//janitor function
+            $("#pamt").val("");
+            $("#int").val("");
+            $("#t").val("");
+            $("#show").hide();
+        });
+    });     
+    
+</script>
+
+<body>
+    <div class="box">
+        <label>Principal Amount: </label> <input type="number" id="pamt">
+        <br>
+        <label>Rate of interest: </label> <input type="number" id="int">
+        <br>
+        <label>Time in years: </label> <input type="number" id="t">
+        <br>
+        <button id="calculate">Calculate Simple Interest</button>
+        <br>
+        <br>
+        <button id="clean">Clear</button>
+        <div id="show">
+        </div>
+    </div>
+
+</body>
+
+</html>

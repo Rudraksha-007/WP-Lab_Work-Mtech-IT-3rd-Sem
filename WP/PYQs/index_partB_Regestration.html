@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-color: rgb(30, 31, 34);
+        }
+
+        label {
+            color: white;
+        }
+
+        input {
+            border: 0px;
+            background-color: rgb(50, 50, 50);
+            border-bottom: 3px solid green;
+            border-radius: 5px;
+            margin-bottom: 15%;
+            color: white;
+        }
+
+        .box {
+            padding: 60px;
+            margin-top: 10%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid white;
+            border-radius: 10px;
+            width: min-content;
+        }
+
+        .submit {
+            background-color: white;
+            border: 0px;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        #verdict{
+            color:white;
+        }
+    </style>
+</head>
+<script>
+    let arr = ["123", "password", "ilovehtml", "birdistheword"];
+    function submit() {
+        let name = document.getElementById("usrname").value;
+        let email = document.getElementById("email").value;
+        let pass = document.getElementById("pass").value;
+
+        let i;
+        for (i = 0; i < arr.length; i++) {
+            if (pass === arr[i]) {
+                document.getElementById("verdict").innerText = "Login Successful";
+                return;
+            }
+        }
+        if (i === arr.length) {
+            document.getElementById("verdict").innerText = "Login failed!";
+        }
+    }
+</script>
+<body>
+    <!-- <form onsubmit="submit()"> -->
+        <div class="box">
+            <label>Enter name : </label><input type="text" id="usrname" name="user">
+            <br>
+            <label>Enter Email: </label><input type="email" id="email" name="mail">
+            <br>
+            <label>Enter Password: </label><input type="password" id="pass" name="passw">
+            <br>
+            <button class="submit" onclick="submit()">Submit</button>
+            <br>
+            <div id="verdict"></div>
+        </div>
+    <!-- </form> -->
+</body>
+</html>

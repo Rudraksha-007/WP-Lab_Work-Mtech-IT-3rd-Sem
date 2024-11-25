@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            background-color: #C3E991;
+        }
+
+        .box {
+            background-color: #DFCC74;
+            color: black;
+            margin: auto;
+            padding: 60px;
+            width: min-content;
+            border-radius: 5px;
+            height: max-content;
+        }
+        input {
+            border: 0px;
+            background-color: white;
+            border-radius: 3px;
+            border-bottom: 2px solid green;
+            color: black;
+        }
+
+        #show {
+            background-color: red;
+            color: white;
+            padding: 5px;
+            border: 0px;
+            border-radius: 3px;
+            animation: my 5s infinite;
+        }
+        @keyframes my {
+            0%{
+                background-color: red;
+            }
+            50%{
+                background-color: #C3E991;
+                color:black;
+            }
+            100%{
+                background-color: red;
+            }
+        }
+        #show:hover {
+            background-color: #75485E;
+            color: white;
+        }
+        #clean{
+            background-color: #75485E;
+            border:0px;
+            border-radius: 3px;
+            padding: 5px;
+            color:white;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="box">
+        Enter Name:
+        <input type="text" name="userid" id="name">
+        <br>
+        <br>
+        Enter Password:
+        <input type="password" name="passw" id="pass">
+        <br>
+        <br>
+        <button id="show" onclick="show()">Show Information</button>
+        <button id="clean" onclick="clean()">Clear</button>
+        <div id="showbox"></div>
+    </div>
+
+</body>
+<script>
+    function show() {
+            let username = document.getElementById("name");
+            let pass = document.getElementById("pass");
+            let box = document.getElementById("showbox");
+            box.innerText = `Your Username is: ${username.value}\nYour Password is: ${pass.value}`;
+    }
+    function clean(){
+        let username=document.getElementById("name");
+        let pass=document.getElementById("pass");
+        username.value="";
+        pass.value="";
+        document.getElementById("showbox").style.display="none";
+    }
+</script>
+</html>

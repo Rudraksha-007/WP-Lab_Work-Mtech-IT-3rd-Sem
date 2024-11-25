@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .lap{
+            border:1px solid black;
+            border-radius: 10px;
+            padding:10px;
+            width: min-content;
+        }
+    </style>
+</head>
+<script>
+    let h = 0, m = 0, s = 0, fn, p = 0;
+    function start() {
+        fn = setInterval(() => {
+            p++;
+            if(p>=10){
+                p=0;
+                s++;
+                document.getElementById("s").innerText=s;
+            }
+            if(s>=60){
+                s=0;
+                m++;
+                document.getElementById("s").innerText=s;
+                document.getElementById("min").innerText=m;
+            }
+            if(m>=60){
+                m=0;
+                h++;
+                document.getElementById("hr").innerText=h;
+                document.getElementById("min").innerText=m;
+            }
+            document.getElementById("p").innerText=p;
+        },100);
+    }
+    function stop(){
+        clearInterval(fn);
+    }
+    function lap(){
+        document.getElementById("ar").innerHTML+="<br>"+ `${h}:${m}:${s}:${p}`;
+    }
+</script>
+
+<body>
+    <button id="start" onclick="start()">Start</button>
+    <button id="start" onclick="stop()">Stop</button>
+    <button id="start" onclick="lap()">Lap</button>
+    <div id="box">
+        <span id="hr">00</span>:<span id="min">00</span>:<span id="s">00</span>:<span id="p">00</span>
+    </div>
+    <div class="lap" id="ar">
+        Laps:
+    </div>  
+</body>
+
+</html>
